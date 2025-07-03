@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for macos12 (x86_64)
 --
--- Host: localhost    Database: alx_book_store
+-- Host: localhost    Database: book_store
 -- ------------------------------------------------------
 -- Server version	9.3.0
 
@@ -29,7 +29,7 @@ CREATE TABLE `Books` (
   `price` double DEFAULT NULL,
   `publication_date` date DEFAULT NULL,
   PRIMARY KEY (`book_id`),
-  KEY `author_id_idx` (`author_id`),
+  KEY `author_id` (`author_id`),
   CONSTRAINT `author_id` FOREIGN KEY (`author_id`) REFERENCES `Authors` (`author_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-30 17:54:10
+-- Dump completed on 2025-07-02 23:08:27

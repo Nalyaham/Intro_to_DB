@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 8.0.31, for macos12 (x86_64)
 --
--- Host: localhost    Database: alx_book_store
+-- Host: localhost    Database: book_store
 -- ------------------------------------------------------
 -- Server version	9.3.0
 
@@ -24,10 +24,11 @@ DROP TABLE IF EXISTS `Orders`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Orders` (
   `order_id` int NOT NULL,
-  `customer_id` int NOT NULL,
+  `customer_id` int DEFAULT NULL,
   `order_date` date DEFAULT NULL,
   PRIMARY KEY (`order_id`),
-  KEY `customer_id_idx` (`customer_id`),
+  KEY `customer` (`customer_id`),
+  CONSTRAINT `customer` FOREIGN KEY (`customer_id`) REFERENCES `Customers` (`customer_id`),
   CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `Customers` (`customer_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2025-06-30 17:54:10
+-- Dump completed on 2025-07-02 23:08:26
