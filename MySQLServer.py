@@ -11,7 +11,7 @@ mycursor = mydb.cursor()
 
 # Create a table named `customers` (if it doesn't exist)
 mycursor.execute("""
-CREATE DATABASE alx_book_store;""")
+CREATE DATABASE IF NOT EXISTS alx_book_store;""")
 
 mycursor.close()
 mydb.close()
